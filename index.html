@@ -30,25 +30,29 @@
                 </h2>
               </div>
               <div class="card-body">
-                <div class="d-flex">
+                <div
+                  class="d-flex"
+                  v-for="(submission, index) in submissions"
+                  v-bind:key="submission.id"
+                >
                   <div class="d-shrink-0">
-                    <img v-bind:src="submissions[0].img" alt="" />
+                    <img v-bind:src="submission.img" alt="" />
                   </div>
-                  <div class="flew-grow-1 ms-3">
+                  <div class="flex-grow-1 ms-3">
                     <h5>
-                      {{ submissions[0].title}}
+                      {{ submission.title}}
                       <span
                         class="float-end text-primary"
                         style="cursor: pointer"
                         v-on:click="upvote()"
                         ><i class="fa fa-chevron-up"></i
-                        ><strong>{{ submissions[0].votes }}</strong></span
+                        ><strong>{{ submission.votes }}</strong></span
                       >
                     </h5>
                     <!-- <div>{{ submissions[0].desc }}</div> 
                       Mit v-html werden html-tags richtig angezeigt
                     --->
-                    <div v-html="submissions[0].desc"></div>
+                    <div v-html="submission.desc"></div>
                     <!-- <div v-pre>{{ submissions[0].desc }}</div>
                       Bei v-pre werden die beiden eckigen Klammern ignoriert und der Wert
                       wird nicht ausgelesen!
