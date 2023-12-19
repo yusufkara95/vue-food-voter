@@ -2,7 +2,7 @@ const submissions = [
     {
         id: 1 ,
         title: 'Spaghetti Bolognese',
-        desc: 'Ein Nudelgericht mit Hackfleischsoße.',
+        desc: 'Ein Nudelgericht <strong>mit</strong> Hackfleischsoße.',
         votes: 16,
         author: 'Italien',
         img: 'https://via.placeholder.com/64'
